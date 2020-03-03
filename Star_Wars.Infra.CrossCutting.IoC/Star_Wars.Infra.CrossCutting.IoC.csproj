@@ -1,0 +1,37 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>netcoreapp2.2</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Star_Wars.Domain\Star_Wars.Domain.csproj" />
+    <ProjectReference Include="..\Star_Wars.Application\Star_Wars.Application.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="2.0.0" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="Star_Wars.Infra.Data\Star_Wars.Infra.Data\.DS_Store" />
+    <None Remove="Star_Wars.Infra.Data\Star_Wars.Infra.Data\Star_wars.Infra.Data\obj\Star_wars.Infra.Data.csproj.nuget.cache" />
+    <None Remove="Star_Wars.Infra.Data\Star_Wars.Infra.Data\Star_wars.Infra.Data\obj\Star_wars.Infra.Data.csproj.nuget.dgspec.json" />
+    <None Remove="Star_Wars.Infra.Data\Star_Wars.Infra.Data\Star_wars.Infra.Data\obj\Star_wars.Infra.Data.csproj.nuget.g.targets" />
+    <None Remove="Star_Wars.Infra.Data\Star_Wars.Infra.Data\Star_wars.Infra.Data\obj\Star_wars.Infra.Data.csproj.nuget.g.props" />
+    <None Remove="Star_Wars.Infra.Data\Star_Wars.Infra.Data\Star_wars.Infra.Data\obj\project.assets.json" />
+    <None Remove="Star_Wars.Infra.Data\Star_Wars.Infra.Data\Star_wars.Infra.Data\obj\Debug\netcoreapp2.2\Star_wars.Infra.Data.csproj.FileListAbsolute.txt" />
+    <None Remove="Star_Wars.Infra.Data\Star_Wars.Infra.Data\Star_wars.Infra.Data\obj\Debug\netcoreapp2.2\Star_wars.Infra.Data.assets.cache" />
+    <None Remove="Star_Wars.Infra.Data\Star_Wars.Infra.Data\Star_wars.Infra.Data\obj\Debug\netcoreapp2.2\Star_wars.Infra.Data.csprojAssemblyReference.cache" />
+    <None Remove="Star_Wars.Infra.Data\Star_Wars.Infra.Data\Star_wars.Infra.Data\obj\Debug\netcoreapp2.2\Star_wars.Infra.Data.AssemblyInfoInputs.cache" />
+    <None Remove="Star_Wars.Infra.Data\Star_Wars.Infra.Data\Star_wars.Infra.Data\obj\Debug\netcoreapp2.2\Star_wars.Infra.Data.AssemblyInfoInputs.cache" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Remove="Star_Wars.Infra.Data\Star_Wars.Infra.Data\Star_wars.Infra.Data\Repository\RepositoryBase.cs" />
+    <Compile Remove="Star_Wars.Infra.Data\Star_Wars.Infra.Data\Star_wars.Infra.Data\Repository\StarshipRepository.cs" />
+    <Compile Remove="Star_Wars.Infra.Data\Star_Wars.Infra.Data\Star_wars.Infra.Data\Context\Star_WarsContext.cs" />
+    <Compile Remove="Star_Wars.Infra.Data\Star_Wars.Infra.Data\Star_wars.Infra.Data\Mappings\StarshipMap.cs" />
+    <Compile Remove="Star_Wars.Infra.Data\Star_Wars.Infra.Data\Star_wars.Infra.Data\Mappings\MapBase.cs" />
+    <Compile Remove="Star_Wars.Infra.Data\Star_Wars.Infra.Data\Star_wars.Infra.Data\obj\Debug\netcoreapp2.2\Star_wars.Infra.Data.AssemblyInfo.cs" />
+    <Compile Remove="Star_Wars.Infra.Data\Star_Wars.Infra.Data\Star_wars.Infra.Data\obj\Debug\netcoreapp2.2\Star_wars.Infra.Data.AssemblyInfo.cs" />
+  </ItemGroup>
+</Project>
