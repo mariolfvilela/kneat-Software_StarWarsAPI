@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 using StarWars.Domain.Common;
 using StarWars.Domain.Interfaces.Repositories;
 using Star_Wars.Infra.Data.Context;
@@ -8,79 +9,85 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Star_Wars.Infra.Data.Repository
 {
+    
     public class RepositoryBase<TEntity> : IRepositoryBase<TEntity> where TEntity : EntityBase
     {
-        protected readonly Star_WarsContext _contexto;
+        protected readonly Star_WarsContext _context;
+        protected readonly DbSet<TEntity> DbSet;
 
-        public RepositoryBase(Star_WarsContext context)
+        public RepositoryBase(Star_WarsContext contexto)
             : base()
         {
-            _contexto = context;
+            _context = contexto;
+            DbSet = _context.Set<TEntity>();
         }
 
-
-        public virtual TEntity GetById(Guid id)
+        public virtual IQueryable<TEntity> GetAll()
         {
-            return _contexto.Set<TEntity>().Find(id);
+            return DbSet;
         }
 
-        public virtual IEnumerable<TEntity> GetAll()
+        public int SaveChanges()
         {
-            return _contexto.Set<TEntity>().ToList();
-        }
-
-        public virtual TEntity Update(TEntity entidade)
-        {
-            _contexto.InitTransacao();
-            _contexto.Set<TEntity>().Attach(entidade);
-            _contexto.Entry(entidade).State = EntityState.Modified;
-            _contexto.SendChanges();
-            return entidade;
-        }
-
-        public virtual void Remove(int id)
-        {
-            var entidade = _contexto.Set<TEntity>().Find(id);
-            if (entidade != null)
-            {
-                _contexto.InitTransacao();
-                _contexto.Set<TEntity>().Remove(entidade);
-                _contexto.SendChanges();
-            }
-        }
-        public virtual void Remove(TEntity entidade)
-        {
-            _contexto.InitTransacao();
-            _contexto.Set<TEntity>().Remove(entidade);
-            _contexto.SendChanges();
-        }
-        public virtual TEntity SaveChanges(TEntity entidade)
-        {
-            _contexto.InitTransacao();
-            _contexto.Set<TEntity>().Add(entidade);
-            _contexto.SendChanges();
-            return entidade;
+            return _context.SaveChanges();
         }
 
         public void Dispose()
         {
-            _contexto.Dispose();
+            _context.Dispose();
             GC.SuppressFinalize(this);
         }
 
-        TEntity IRepositoryBase<TEntity>.Add(TEntity entidade)
+        public virtual int Add(TEntity entidade)
         {
-            throw new NotImplementedException();
+            _context.InitTransacao();
+            int id = DbSet.Add(entidade).Entity.Id;
+            _context.SendChanges();
+            //DbSet.Add(entidade);
+            return id;
         }
 
-        public void RemoveById(int id)
+        public virtual void RemoveById(int id)
         {
-            throw new NotImplementedException();
+            var entidade = GetById(id);
+            if (entidade != null)
+            {
+                _context.InitTransacao();
+                DbSet.Remove(entidade);
+                _context.SendChanges();
+            }
         }
 
-        public TEntity GetById(int id)
+        public virtual void Remove(TEntity entidade)
         {
-            throw new NotImplementedException();
+            _context.InitTransacao();
+            DbSet.Remove(entidade);
+            _context.SendChanges();
+        }
+
+        public virtual TEntity Update(TEntity entidade)
+        {
+            _context.InitTransacao();
+            DbSet.Attach(entidade);
+            _context.Entry(entidade).State = EntityState.Modified;
+            _context.SendChanges();
+            return entidade;
+        }
+
+        public virtual TEntity GetById(int id)
+        {
+            return DbSet.Find(id);
+        }
+
+
+        public virtual async Task<TEntity> GetByIdAsync(int id)
+        {
+            return await DbSet.FindAsync(id);
+        }
+
+        public virtual async Task<IEnumerable<TEntity>> ListAsync()
+        {
+            return await DbSet.ToListAsync();
         }
     }
 }

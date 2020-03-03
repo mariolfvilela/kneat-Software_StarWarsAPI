@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 using StarWars.Domain.Common;
 
 namespace StarWars.Domain.Interfaces.Repositories
@@ -16,7 +17,7 @@ namespace StarWars.Domain.Interfaces.Repositories
         /// </summary>
         /// <param name="entidade">Entidade a ser incluída.</param>
         /// <returns>A entidade incluída.</returns>
-        TEntity Add(TEntity entidade);
+        int Add(TEntity entidade);
 
         /// <summary>
         /// Excluir um registro no banco de dados.
@@ -42,12 +43,14 @@ namespace StarWars.Domain.Interfaces.Repositories
         /// </summary>
         /// <param name="id">ID do registro a ser retornado.</param>
         /// <returns>Entidade do registro encontrado.</returns>
-        TEntity GetById(int id);
+        //TEntity GetById(int id);
+        Task<TEntity> GetByIdAsync(int id);
 
         /// <summary>
         /// Selecionar todos os registros no banco de dados para uma determinada entidade.
         /// </summary>
         /// <returns>Uma listagem dos registros encontrados.</returns>
-        IEnumerable<TEntity> GetAll();
+        //IQueryable<TEntity> GetAll();
+        Task<IEnumerable<TEntity>> ListAsync();
     }
 }

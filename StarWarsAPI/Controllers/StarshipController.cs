@@ -34,7 +34,7 @@ namespace Star_Wars.API.Controllers
         {
             try
             {
-                var dado = _app.GetAll();
+                var dado = app.ListAsync();
 
                 return StatusCode(200,
                      dado

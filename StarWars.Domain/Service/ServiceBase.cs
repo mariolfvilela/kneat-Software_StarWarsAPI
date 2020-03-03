@@ -18,69 +18,47 @@ namespace StarWars.Domain.Service
             this._repository = repositorio;
         }
 
-        public TEntity Add(TEntity entidade)
-        {
-            throw new NotImplementedException();
-        }
-
-        
-
         public void Dispose()
         {
             _repository.Dispose();
         }
-
-        public void Excluir(TEntity entidade)
+        public async Task<int> AddAsync(TEntity entidade)
         {
-            throw new NotImplementedException();
+            int id = _repository.Add(entidade);
+
+            return id;
         }
 
-        public IEnumerable<TEntity> GetAll()
+        public async Task<bool> RemoveAsync(TEntity entidade)
         {
-            throw new NotImplementedException();
+            _repository.Remove(entidade);
+
+            return true;
         }
 
-        public virtual TEntity GetById(int id)
-        {
-            var entidade = _repository.GetById(id);
-
-            if (entidade == null)
-            {
-                throw new Exception("no find");
-            }
-
-            return entidade;
-        }
-
-       
-
-        public Task<IEnumerable<TEntity>> ListAsync()
-        {
-            throw new NotImplementedException();
-        }
-
-        public virtual void Remove(int id)
+        public async Task<bool> RemoveByIdAsync(int id)
         {
             _repository.RemoveById(id);
+
+            return true;
         }
 
-        
-
-        public virtual IEnumerable<TEntity> SelecionarTodos()
+        public async Task<TEntity> GetByIdAsync(int id)
         {
-            var entidades = _repository.GetAll();
-
-            if (!entidades.Any())
-            {
-                throw new Exception("No find");
-            }
-
-            return entidades;
+            return await _repository.GetByIdAsync(id);
         }
 
-        public TEntity Update(TEntity entidade)
+        public async Task<IEnumerable<TEntity>> ListAsync()
         {
-            throw new NotImplementedException();
+            return await _repository.ListAsync();
+        }
+
+
+        public async Task<TEntity> UpdateAsync(TEntity entidade)
+        {
+            _repository.Update(entidade);
+
+            return entidade;
         }
     }
 }

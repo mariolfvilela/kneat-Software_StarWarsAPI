@@ -14,12 +14,12 @@ namespace Star_Wars.CrossCutting.IoC
         public static void Registrar(IServiceCollection svcCollection)
         {
             //Aplicação
-            svcCollection.AddScoped(typeof(IAppServicoBase<,>), typeof(BaseAppService<,>));
-            svcCollection.AddScoped<IStarshipAppService, StarshipAppService>();
+            //svcCollection.AddTransient(typeof(IAppServicoBase<,>), typeof(BaseAppService<,>));
+            //svcCollection.AddTransient<IStarshipAppService, StarshipAppService>();
 
             //Domínio
-            svcCollection.AddScoped(typeof(IServiceBase<>), typeof(ServiceBase<>));
-            svcCollection.AddScoped<IStarshipService, StarshipServico>();
+            //svcCollection.AddTransient(typeof(IServiceBase<>), typeof(ServiceBase<>));
+            //svcCollection.AddTransient<IStarshipService, StarshipServico>();
 
             //Repositorio
             svcCollection.AddScoped(typeof(IRepositoryBase<>), typeof(RepositoryBase<>));

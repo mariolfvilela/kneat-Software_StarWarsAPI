@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 using AutoMapper;
+using DotNetCore.Results;
 using Star_Wars.Application.Interfaces;
 using Star_Wars.Application.ViewModels;
 using StarWars.Domain.Common;
@@ -13,59 +15,43 @@ namespace Star_Wars.Application.Services
         where TEntityViewModel : ViewModelBase
     {
         protected readonly IServiceBase<TEntity> _service;
-        protected readonly IMapper iMapper;
+        protected readonly IMapper _mapper;
 
         public BaseAppService(IMapper iMapper, IServiceBase<TEntity> servico)
             : base()
         {
-            this.iMapper = iMapper;
+            this._mapper = iMapper;
             this._service = servico;
         }
 
-        public TEntityViewModel Alterar(TEntityViewModel entidade)
+        public async Task<IDataResult<int>> AddAsync(TEntityViewModel entityViewModel)
         {
-            //return _service.Update(iMapper.Map<TEntity>(entidade));
-            return iMapper.Map<TEntityViewModel>(_service.Update(iMapper.Map<TEntity>(entidade)));
+            return DataResult<int>.Success(await _service.AddAsync(_mapper.Map<TEntity>(entityViewModel)));
         }
 
-        public void Excluir(int id)
+        public async Task<TEntityViewModel> GetByIdAsync(int id)
         {
-            _service.Remove(id);
+            return _mapper.Map<TEntityViewModel>(await _service.GetByIdAsync(id));
         }
 
-        public void Excluir(TEntityViewModel entidade)
+        public async Task<IEnumerable<TEntityViewModel>> ListAsync()
         {
-            _service.Excluir(iMapper.Map<TEntity>(entidade));
+            return _mapper.Map<IEnumerable<TEntityViewModel>>(await _service.ListAsync());
         }
 
-        public IEnumerable<TEntityViewModel> GetAll()
+        public async Task<IResult> RemoveAsync(TEntityViewModel entityViewModel)
         {
-            throw new NotImplementedException();
+            return await _service.RemoveAsync(_mapper.Map<TEntity>(entityViewModel)) ? Result.Success() : Result.Fail();
         }
 
-        public IList<TEntityViewModel> GetAllHistory(Guid id)
+        public async Task<IResult> RemoveByIdAsync(int id)
         {
-            throw new NotImplementedException();
+            return (await _service.RemoveByIdAsync(id)) ? Result.Success() : Result.Fail(); throw new NotImplementedException();
         }
 
-        public TEntityViewModel GetById(Guid id)
+        public async Task<TEntityViewModel> UpdateAsync(TEntityViewModel entityViewModel)
         {
-            throw new NotImplementedException();
-        }
-
-        public void Register(TEntityViewModel customerViewModel)
-        {
-            throw new NotImplementedException();
-        }
-
-        public void Remove(Guid id)
-        {
-            throw new NotImplementedException();
-        }
-
-        public void Update(TEntityViewModel customerViewModel)
-        {
-            throw new NotImplementedException();
+            return _mapper.Map<TEntityViewModel>(await _service.UpdateAsync(_mapper.Map<TEntity>(entityViewModel)));
         }
     }
 }
