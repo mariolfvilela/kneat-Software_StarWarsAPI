@@ -10,7 +10,6 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Star_Wars.Application\Star_Wars.Application.csproj" />
-    <ProjectReference Include="..\Star_Wars.Domain\Star_Wars.Domain.csproj" />
     <ProjectReference Include="..\Star_Wars.Infra.CrossCutting.IoC\Star_Wars.Infra.Data\Star_Wars.Infra.Data\Star_wars.Infra.Data\Star_wars.Infra.Data.csproj" />
   </ItemGroup>
 </Project>
