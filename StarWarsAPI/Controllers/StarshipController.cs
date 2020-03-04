@@ -34,7 +34,7 @@ namespace StarWars.API.Controllers
         {
             try
             {
-                var dado = app.SelecionarAtivosAsync(distance);
+                var dado = app.CalculatingDistanceAsync(distance);
 
                 return StatusCode(200,
                      dado

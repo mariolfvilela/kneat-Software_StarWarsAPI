@@ -55,7 +55,7 @@ namespace StarWars.Application.Services
             return _mapper.Map<TEntityViewModel>(await _service.UpdateAsync(_mapper.Map<TEntity>(entityViewModel)));
         }
 
-        public async Task<IEnumerable<StarshipViewModel>> SelecionarAtivosAsync(int dis)
+        public async Task<IEnumerable<StarshipViewModel>> CalculatingDistanceAsync(int dis)
         {
             return _mapper.Map<IEnumerable<StarshipViewModel>>(await API_Consumption.Get(dis));
         }
