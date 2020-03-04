@@ -20,3 +20,19 @@ If there are any queries on the challenge I can be contacted for clarification i
 All aspects of the challenge will be considered during the review, coding style, code organization, correct calculations, working application etc.
 This is a very important part of the interview process and they like our candidates to put their best code forward.
 
+## Frameworks and Libraries
+- [ASP.NET Core 3.1](https://docs.microsoft.com/pt-br/aspnet/core/?view=aspnetcore-3.1);
+- [Entity Framework Core](https://docs.microsoft.com/en-us/ef/core/) (for data access);
+- [AutoMapper](https://automapper.org/) (for mapping resources and models);
+- [Swashbuckle](https://github.com/domaindrivendev/Swashbuckle) (API documentation).
+
+## How to Test
+
+First, install [.NET Core 3.1](https://dotnet.microsoft.com/download/dotnet-core/3.1). Then, open the terminal or command prompt at the API root path (```/StarWarsAPI/```) and run the following commands, in sequence:
+
+```
+dotnet restore
+dotnet run
+```
+
+Navigate to ```https://localhost:5001/swagger``` to check the API documentation.
