@@ -1,5 +1,5 @@
 ﻿using System;
-namespace Star_Wars.Lib.Tools
+namespace StarWars.Lib.Tools
 {
     public static class Globals
     {

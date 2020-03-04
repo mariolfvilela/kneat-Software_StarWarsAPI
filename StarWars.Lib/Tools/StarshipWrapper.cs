@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using Newtonsoft.Json;
 
-namespace Star_Wars.Lib.Tools
+namespace StarWars.Lib.Tools
 {
     public class StarshipWrapper
     {

@@ -9,7 +9,7 @@ using StarWars.Domain.Interfaces.Services;
 
 namespace StarWars.Domain.Service
 {
-    public abstract class ServiceBase<TEntity> : IServiceBase<TEntity> where TEntity : EntityBase
+    public class ServiceBase<TEntity> : IServiceBase<TEntity> where TEntity : EntityBase
     {
         protected readonly IRepositoryBase<TEntity> _repository;
 

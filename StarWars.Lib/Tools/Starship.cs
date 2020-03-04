@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace Star_Wars.Lib.Tools
+namespace StarWars.Lib.Tools
 {
     public class Starship
     {

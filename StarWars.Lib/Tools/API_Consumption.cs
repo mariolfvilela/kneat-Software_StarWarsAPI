@@ -6,7 +6,7 @@ using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using Newtonsoft.Json;
 
-namespace Star_Wars.Lib.Tools
+namespace StarWars.Lib.Tools
 {
     public static class API_Consumption
     {

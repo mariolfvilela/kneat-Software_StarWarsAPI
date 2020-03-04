@@ -1,7 +1,7 @@
 ﻿using System;
 using AutoMapper;
 
-namespace Star_Wars.Application.AutoMapper
+namespace StarWars.Application.AutoMapper
 {
     public class AutoMapperConfig
     {

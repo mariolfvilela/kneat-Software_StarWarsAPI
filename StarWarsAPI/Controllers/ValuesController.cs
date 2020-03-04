@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 
-namespace Star_Wars.API.Controllers
+namespace StarWars.API.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]

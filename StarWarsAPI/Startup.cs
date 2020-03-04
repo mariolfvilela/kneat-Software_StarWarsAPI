@@ -13,9 +13,9 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
-using Star_Wars.Application;
-using Star_Wars.CrossCutting.IoC;
-using Star_Wars.Infra.Data.Context;
+using StarWars.Application;
+using StarWars.CrossCutting.IoC;
+using StarWars.Infra.Data.Context;
 using StarWars.Application;
 
 namespace StarWarsAPI
@@ -44,7 +44,7 @@ namespace StarWarsAPI
 
             services.AddControllers();
 
-            services.AddDbContext<Star_WarsContext>(builder =>
+            services.AddDbContext<StarWarsContext>(builder =>
             {
                 if (_env.IsDevelopment())
                     builder.EnableSensitiveDataLogging(true);

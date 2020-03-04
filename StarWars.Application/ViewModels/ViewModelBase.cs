@@ -1,7 +1,7 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations;
 
-namespace Star_Wars.Application.ViewModels
+namespace StarWars.Application.ViewModels
 {
     public class ViewModelBase
     {

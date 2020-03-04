@@ -1,9 +1,9 @@
 ﻿using System;
 using AutoMapper;
 using Microsoft.Extensions.DependencyInjection;
-using Star_Wars.Application.AutoMapper;
+using StarWars.Application.AutoMapper;
 
-namespace Star_Wars.API.Extensions
+namespace StarWars.API.Extensions
 {
     public static class AutoMapperSetup
     {

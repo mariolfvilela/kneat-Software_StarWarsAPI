@@ -2,7 +2,7 @@
 using StarWars.Domain.Entities;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
-namespace Star_Wars.Infra.Data.Mappings
+namespace StarWars.Infra.Data.Mappings
 {
     public class StarshipMap : MapBase<Starship>
     {

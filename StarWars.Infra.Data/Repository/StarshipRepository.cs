@@ -2,13 +2,13 @@
 using Microsoft.EntityFrameworkCore;
 using StarWars.Domain.Entities;
 using StarWars.Domain.Interfaces.Repositories;
-using Star_Wars.Infra.Data.Context;
+using StarWars.Infra.Data.Context;
 
-namespace Star_Wars.Infra.Data.Repository
+namespace StarWars.Infra.Data.Repository
 {
     public class StarshipRepository : RepositoryBase<Starship>, IStarshipRepository
     {
-        public StarshipRepository(Star_WarsContext context)
+        public StarshipRepository(StarWarsContext context)
             : base(context)
         {
 

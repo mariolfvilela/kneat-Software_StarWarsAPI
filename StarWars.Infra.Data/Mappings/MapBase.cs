@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore;
 using StarWars.Domain.Common;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
-namespace Star_Wars.Infra.Data.Mappings
+namespace StarWars.Infra.Data.Mappings
 {
     public class MapBase<T> : IEntityTypeConfiguration<T>
         where T : EntityBase

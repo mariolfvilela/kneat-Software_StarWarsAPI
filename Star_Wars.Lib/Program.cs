@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Star_Wars.Lib
+namespace StarWars.Lib
 {
     class Program
     {

@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using DotNetCore.Results;
-using Star_Wars.Application.ViewModels;
+using StarWars.Application.ViewModels;
 using StarWars.Domain.Common;
 
-namespace Star_Wars.Application.Interfaces
+namespace StarWars.Application.Interfaces
 {
     public interface IAppServicoBase<TEntityDomain, TEntityViewModel>
         where TEntityDomain : EntityBase

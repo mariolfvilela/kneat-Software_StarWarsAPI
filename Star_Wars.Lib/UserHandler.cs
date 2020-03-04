@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace Star_Wars.Lib
+namespace StarWars.Lib
 {
     public static class UserHandler
     {

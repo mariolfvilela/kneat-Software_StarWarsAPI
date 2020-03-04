@@ -3,14 +3,14 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using AutoMapper;
 using DotNetCore.Results;
-using Star_Wars.Application.Interfaces;
-using Star_Wars.Application.ViewModels;
+using StarWars.Application.Interfaces;
+using StarWars.Application.ViewModels;
 using StarWars.Domain.Common;
 using StarWars.Domain.Interfaces.Services;
 
-namespace Star_Wars.Application.Services
+namespace StarWars.Application.Services
 {
-    public abstract class BaseAppService<TEntity, TEntityViewModel> : IAppServicoBase<TEntity, TEntityViewModel>
+    public class BaseAppService<TEntity, TEntityViewModel> : IAppServicoBase<TEntity, TEntityViewModel>
         where TEntity : EntityBase
         where TEntityViewModel : ViewModelBase
     {

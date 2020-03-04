@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 
-namespace Star_Wars.Application.ViewModels
+namespace StarWars.Application.ViewModels
 {
     public class StarshipViewModel: ViewModelBase
     {

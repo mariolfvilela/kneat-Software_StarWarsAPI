@@ -1,19 +1,19 @@
 ﻿using System;
 using System.Linq;
-using Star_Wars.Infra.Data.Mappings;
+using StarWars.Infra.Data.Mappings;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Storage;
 using StarWars.Domain.Entities;
 
-namespace Star_Wars.Infra.Data.Context
+namespace StarWars.Infra.Data.Context
 {
-    public class Star_WarsContext : DbContext
+    public class StarWarsContext : DbContext
     {
         public DbSet<Starship> Starship { get; set; }
 
         public IDbContextTransaction Transaction { get; private set; }
 
-        public Star_WarsContext(DbContextOptions<Star_WarsContext> options)
+        public StarWarsContext(DbContextOptions<StarWarsContext> options)
             : base(options)
         {
             if (Database.GetPendingMigrations().Count() > 0)

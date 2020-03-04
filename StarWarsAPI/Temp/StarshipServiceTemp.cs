@@ -1,5 +1,5 @@
 ﻿using System;
-namespace Star_Wars.API.Temp
+namespace StarWars.API.Temp
 {
     public class StarshipServiceTemp
     {

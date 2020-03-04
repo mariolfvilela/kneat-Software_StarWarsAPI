@@ -1,6 +1,6 @@
 ﻿using System;
 using AutoMapper;
-using Star_Wars.Application.ViewModels;
+using StarWars.Application.ViewModels;
 using StarWars.Domain.Entities;
 
 namespace StarWars.Application

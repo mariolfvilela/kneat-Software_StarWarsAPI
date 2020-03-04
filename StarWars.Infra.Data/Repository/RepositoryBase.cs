@@ -4,18 +4,18 @@ using System.Linq;
 using System.Threading.Tasks;
 using StarWars.Domain.Common;
 using StarWars.Domain.Interfaces.Repositories;
-using Star_Wars.Infra.Data.Context;
+using StarWars.Infra.Data.Context;
 using Microsoft.EntityFrameworkCore;
 
-namespace Star_Wars.Infra.Data.Repository
+namespace StarWars.Infra.Data.Repository
 {
     
     public class RepositoryBase<TEntity> : IRepositoryBase<TEntity> where TEntity : EntityBase
     {
-        protected readonly Star_WarsContext _context;
+        protected readonly StarWarsContext _context;
         protected readonly DbSet<TEntity> DbSet;
 
-        public RepositoryBase(Star_WarsContext contexto)
+        public RepositoryBase(StarWarsContext contexto)
             : base()
         {
             _context = contexto;

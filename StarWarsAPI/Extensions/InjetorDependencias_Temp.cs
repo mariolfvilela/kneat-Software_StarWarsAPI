@@ -1,13 +1,13 @@
 ﻿using System;
 using Microsoft.Extensions.DependencyInjection;
-using Star_Wars.Application.Interfaces;
-using Star_Wars.Application.Services;
+using StarWars.Application.Interfaces;
+using StarWars.Application.Services;
 using StarWars.Domain.Interfaces.Repositories;
 using StarWars.Domain.Interfaces.Services;
 using StarWars.Domain.Service;
-using Star_Wars.Infra.Data.Repository;
+using StarWars.Infra.Data.Repository;
 
-namespace Star_Wars.API.Extensions
+namespace StarWars.API.Extensions
 {
     public class InjetorDependencias_Temp
     {

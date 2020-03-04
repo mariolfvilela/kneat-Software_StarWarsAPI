@@ -5,14 +5,14 @@ using System.Threading.Tasks;
 using AutoMapper;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using Star_Wars.Application.Interfaces;
-using Star_Wars.Application.ViewModels;
+using StarWars.Application.Interfaces;
+using StarWars.Application.ViewModels;
 using StarWars.Domain.Entities;
 using StarWars.Domain.Exceptions;
 
 // For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
-namespace Star_Wars.API.Controllers
+namespace StarWars.API.Controllers
 {
     [ApiController]
     [Produces("application/json")]

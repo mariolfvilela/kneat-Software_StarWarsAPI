@@ -1,13 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
-using Star_Wars.Application.ViewModels;
+using StarWars.Application.ViewModels;
 using StarWars.Domain.Interfaces.Repositories;
 using AutoMapper;
 using StarWars.Domain.Interfaces.Services;
 using StarWars.Domain.Entities;
-using Star_Wars.Application.Interfaces;
+using StarWars.Application.Interfaces;
 
-namespace Star_Wars.Application.Services
+namespace StarWars.Application.Services
 {
     public class StarshipAppService : BaseAppService<Starship, StarshipViewModel>, IStarshipAppService
     {
