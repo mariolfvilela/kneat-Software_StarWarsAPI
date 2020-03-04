@@ -10,6 +10,6 @@ namespace StarWars.Application.Interfaces
 {
     public interface IStarshipAppService : IAppServicoBase<Starship, StarshipViewModel>
     {
-        IEnumerable<StarshipViewModel> SelecionarAtivos();
+        
     }
 }

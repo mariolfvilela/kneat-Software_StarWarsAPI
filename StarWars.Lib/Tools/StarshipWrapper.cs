@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using Newtonsoft.Json;
+using StarWars.Domain.Entities;
 
 namespace StarWars.Lib.Tools
 {

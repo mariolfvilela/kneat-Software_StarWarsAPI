@@ -29,12 +29,12 @@ namespace StarWars.API.Controllers
         // [Authorize("Bearer")]
         [AllowAnonymous]
         [HttpGet]
-        [Route("Ativos")]
+        [Route("stops")]
         public ActionResult<StarshipViewModel> Get()
         {
             try
             {
-                var dado = app.ListAsync();
+                var dado = app.SelecionarAtivosAsync();
 
                 return StatusCode(200,
                      dado
@@ -58,7 +58,9 @@ namespace StarWars.API.Controllers
                     });
             }
         }
-
+        [AllowAnonymous]
+        [HttpGet]
+        [Route("Test2")]
         public async Task<IActionResult> Teste(string id)
         {
 

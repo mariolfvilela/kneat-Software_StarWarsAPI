@@ -7,6 +7,7 @@ using StarWars.Application.Interfaces;
 using StarWars.Application.ViewModels;
 using StarWars.Domain.Common;
 using StarWars.Domain.Interfaces.Services;
+using StarWars.Lib.Tools;
 
 namespace StarWars.Application.Services
 {
@@ -52,6 +53,11 @@ namespace StarWars.Application.Services
         public async Task<TEntityViewModel> UpdateAsync(TEntityViewModel entityViewModel)
         {
             return _mapper.Map<TEntityViewModel>(await _service.UpdateAsync(_mapper.Map<TEntity>(entityViewModel)));
+        }
+
+        public async Task<IEnumerable<StarshipViewModel>> SelecionarAtivosAsync()
+        {
+            return _mapper.Map<IEnumerable<StarshipViewModel>>(await API_Consumption.Get());
         }
     }
 }

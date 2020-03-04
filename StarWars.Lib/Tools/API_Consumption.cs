@@ -5,6 +5,7 @@ using System.Net.Http;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using Newtonsoft.Json;
+using StarWars.Domain.Entities;
 
 namespace StarWars.Lib.Tools
 {
@@ -12,7 +13,7 @@ namespace StarWars.Lib.Tools
     {
         public static bool ValidInput => (Regex.IsMatch(Globals.MGLT, @"^\d+$") && long.TryParse(Globals.MGLT, out long n));
 
-        public static List<Starship> Get(int valor = 1000)
+        public static async Task<List<Starship>> Get(int valor = 1000)
         {
             return GetStarshipAsync(ResultCallBack, valor).Result;
         }
@@ -49,7 +50,7 @@ namespace StarWars.Lib.Tools
 
                                     foreach (Starship starship in starships)
                                     {
-                                        starship.ResupplyFrequency = CalculateResupplyFrequency(starship);
+                                        starship.resupplyFrequency = CalculateResupplyFrequency(starship);
                                     }
 
                                     // Run the callback method, passing the current result from the API.
@@ -89,7 +90,7 @@ namespace StarWars.Lib.Tools
 
                 foreach (var starship in starshipSearchResult.Starships)
                 {
-                    Console.WriteLine($"{starship.name.PadRight(maxLengthStarshipName)} \t\tMGLT - {starship.MGLT.PadLeft(maxLengthStarshipRange)} \t\tNo. of Resupplies - { starship.ResupplyFrequency.PadLeft(maxLengthStarshipResupplies) }");
+                    Console.WriteLine($"{starship.name.PadRight(maxLengthStarshipName)} \t\tMGLT - {starship.MGLT.PadLeft(maxLengthStarshipRange)} \t\tNo. of Resupplies - { starship.resupplyFrequency.PadLeft(maxLengthStarshipResupplies) }");
                 }
             }
         }

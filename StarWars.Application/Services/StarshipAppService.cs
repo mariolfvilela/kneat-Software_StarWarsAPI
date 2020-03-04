@@ -6,6 +6,8 @@ using AutoMapper;
 using StarWars.Domain.Interfaces.Services;
 using StarWars.Domain.Entities;
 using StarWars.Application.Interfaces;
+using StarWars.Lib.Tools;
+using System.Threading.Tasks;
 
 namespace StarWars.Application.Services
 {
@@ -16,11 +18,7 @@ namespace StarWars.Application.Services
                                   IStarshipService servico)
             : base(mapper, servico)
         {
-        }
+        }        
 
-        public IEnumerable<StarshipViewModel> SelecionarAtivos()
-        {
-            throw new NotImplementedException();
-        }
     }
 }
