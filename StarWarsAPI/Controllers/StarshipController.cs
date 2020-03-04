@@ -30,7 +30,7 @@ namespace StarWars.API.Controllers
         [AllowAnonymous]
         [HttpGet]
         [Route("Distance/{MGLT:int}")]
-        public async Task<ActionResult<string>> GetAsync(int MGLT)
+        public async Task<ActionResult<StarshipCoverDistanceViewModel>> GetAsync(int MGLT)
         {
             try
             {

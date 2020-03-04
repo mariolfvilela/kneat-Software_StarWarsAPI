@@ -29,6 +29,7 @@ Requirements
 - [Entity Framework Core](https://docs.microsoft.com/en-us/ef/core/) (for data access);
 - [AutoMapper](https://automapper.org/) (for mapping resources and models);
 - [Swashbuckle](https://github.com/domaindrivendev/Swashbuckle) (API documentation).
+- [Entity Framework In-Memory Provider](https://docs.microsoft.com/en-us/ef/core/miscellaneous/testing/in-memory) (for testing purposes);
 
 ## How to Test
 
