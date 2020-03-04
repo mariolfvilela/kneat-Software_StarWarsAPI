@@ -12,6 +12,12 @@ namespace StarWars.Infra.Data.Repository
     
     public class RepositoryBase<TEntity> : IRepositoryBase<TEntity> where TEntity : EntityBase
     {
+        /// <summary>
+        /// https://docs.microsoft.com/en-us/ef/core/miscellaneous/testing/in-memory
+        /// InMemory
+        /// </summary>
+        
+
         protected readonly StarWarsContext _context;
         protected readonly DbSet<TEntity> DbSet;
 
@@ -40,10 +46,10 @@ namespace StarWars.Infra.Data.Repository
 
         public virtual int Add(TEntity entidade)
         {
-            _context.InitTransacao();
+            //_context.InitTransacao();
             int id = DbSet.Add(entidade).Entity.Id;
-            _context.SendChanges();
-            //DbSet.Add(entidade);
+            _context.SaveChanges();
+            //_context.SendChanges();
             return id;
         }
 
@@ -52,25 +58,28 @@ namespace StarWars.Infra.Data.Repository
             var entidade = GetById(id);
             if (entidade != null)
             {
-                _context.InitTransacao();
+               // _context.InitTransacao();
                 DbSet.Remove(entidade);
-                _context.SendChanges();
+                _context.SaveChanges();
+                // _context.SendChanges();
             }
         }
 
         public virtual void Remove(TEntity entidade)
         {
-            _context.InitTransacao();
+            //_context.InitTransacao();
             DbSet.Remove(entidade);
-            _context.SendChanges();
+            _context.SaveChanges();
+            //_context.SendChanges();
         }
 
         public virtual TEntity Update(TEntity entidade)
         {
-            _context.InitTransacao();
+            //_context.InitTransacao();
             DbSet.Attach(entidade);
             _context.Entry(entidade).State = EntityState.Modified;
-            _context.SendChanges();
+            _context.SaveChanges();
+            //_context.SendChanges();
             return entidade;
         }
 

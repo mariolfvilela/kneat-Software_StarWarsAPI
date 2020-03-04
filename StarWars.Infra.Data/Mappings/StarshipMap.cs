@@ -11,13 +11,13 @@ namespace StarWars.Infra.Data.Mappings
             base.Configure(builder);
             builder.ToTable("Starship");
              
-            builder.Property(c => c.name)
+            builder.Property(c => c.Name)
                 .HasColumnType("varchar(100)")
                 .HasMaxLength(100)
                 .HasField("NAME")
                 .IsRequired();
 
-            builder.Property(c => c.model)
+            builder.Property(c => c.Model)
                 .HasColumnType("varchar(100)")
                 .HasMaxLength(100)
                 .HasField("MODEL")

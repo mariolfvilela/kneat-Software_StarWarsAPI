@@ -34,7 +34,7 @@ namespace StarWarsAPI
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            
+
 
             services.AddMvc(options =>
             {
@@ -42,17 +42,24 @@ namespace StarWarsAPI
             })
           .SetCompatibilityVersion(CompatibilityVersion.Version_3_0);
 
-            services.AddControllers();
+            services.AddControllers().AddNewtonsoftJson(options =>
+            // Install the package Microsoft.AspNetCore.Mvc.NewtonsoftJson
+                options.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore
+            );
 
             services.AddDbContext<StarWarsContext>(builder =>
             {
-                if (_env.IsDevelopment())
-                    builder.EnableSensitiveDataLogging(true);
+                //if (_env.IsDevelopment())
+                //    builder.EnableSensitiveDataLogging(true);
 
-                var connStr = this.Configuration.GetConnectionString("Kneat");
-                builder.UseMySql(connStr);
+                //var connStr = this.Configuration.GetConnectionString("Kneat");
+                //builder.UseMySql(connStr);
+                if (!builder.IsConfigured)
+                {
+                    builder.UseSqlServer(@"Server=(localdb)\mssqllocaldb;Database=EFProviders.InMemory;Trusted_Connection=True;ConnectRetryCount=0");
+                }
             });
-            
+
 
             InjetorDependency.Registrar(services);
 

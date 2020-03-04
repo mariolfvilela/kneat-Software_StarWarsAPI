@@ -29,15 +29,20 @@ namespace StarWars.API.Controllers
         // [Authorize("Bearer")]
         [AllowAnonymous]
         [HttpGet]
-        [Route("Distance/{distance:int}")]
-        public ActionResult<StarshipViewModel> Get(int distance)
+        [Route("Distance/{MGLT:int}")]
+        public async Task<ActionResult<string>> GetAsync(int MGLT)
         {
             try
             {
-                var dado = app.CalculatingDistanceAsync(distance);
+                var dado = await app.CalculatingDistanceAsync(MGLT);
 
                 return StatusCode(200,
                      dado
+                     .Distinct()
+                     .OrderBy(c=>c.MGLT)
+                     .ThenBy(c => c.Name)
+                     .Select(c=>new { a = c.Name+" needs to stop: "+c.MGLT})
+                     .Select(c=>c.a).ToList()
                     );
             }
             catch (EntityValidationException ex)

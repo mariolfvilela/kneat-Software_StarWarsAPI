@@ -19,6 +19,5 @@ namespace StarWars.Application.Services
             : base(mapper, servico)
         {
         }        
-
     }
 }

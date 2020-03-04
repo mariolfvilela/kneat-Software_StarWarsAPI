@@ -17,6 +17,6 @@ namespace StarWars.Application.Interfaces
         Task<TEntityViewModel> UpdateAsync(TEntityViewModel entityViewModel);
         Task<TEntityViewModel> GetByIdAsync(int id);
         Task<IEnumerable<TEntityViewModel>> ListAsync();
-        Task<IEnumerable<StarshipViewModel>> CalculatingDistanceAsync(int distance);
+        Task<IEnumerable<TEntityViewModel>> CalculatingDistanceAsync(int distance);
     }
 }

@@ -14,40 +14,24 @@ namespace StarWars.Application.ViewModels
         [DisplayName("Name")]
         public string Name { get; set; }
 
-        //[Required(ErrorMessage = "The E-mail is Required")]
-        //[EmailAddress]
-        //[DisplayName("E-mail")]
-        //public string Email { get; set; }
-
-        //[Required(ErrorMessage = "The BirthDate is Required")]
-        //[DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:yyyy-MM-dd}")]
-        //[DataType(DataType.Date, ErrorMessage = "Data em formato inválido")]
-        //[DisplayName("Birth Date")]
-        //public DateTime BirthDate { get; set; }
-
-        
-        public string model { get; set; }
-        public string manufacturer { get; set; }
-        public string cost_in_credits { get; set; }
-        public string length { get; set; }
-        public string max_atmosphering_speed { get; set; }
-        public string crew { get; set; }
-        public string passengers { get; set; }
-        public string cargo_capacity { get; set; }
-        public string consumables { get; set; }
-        public string hyperdrive_rating { get; set; }
+        public string Model { get; set; }
+        public string Manufacturer { get; set; }
+        public string Cost_in_credits { get; set; }
+        public string Length { get; set; }
+        public string Max_atmosphering_speed { get; set; }
+        public string Crew { get; set; }
+        public string Passengers { get; set; }
+        public string Cargo_capacity { get; set; }
+        public string Consumables { get; set; }
+        public string Hyperdrive_rating { get; set; }
         public string MGLT { get; set; }
-        public string starship_class { get; set; }
-        public IList<string> pilots { get; set; }
-        public IList<string> films { get; set; }
-        public DateTime created { get; set; }
-        public DateTime edited { get; set; }
-        public string url { get; set; }
-        public string resupplyFrequency { get; set; }
-
-
-        public string Mensagem { get; set; }
-        public string Exception { get; set; }
-        public List<string> Mensagens { get; set; }
+        public string Starship_class { get; set; }
+        public IList<string> Pilots { get; set; }
+        public IList<string> Films { get; set; }
+        public DateTime Created { get; set; }
+        public DateTime Edited { get; set; }
+        public string Url { get; set; }
+        public string ResupplyFrequency { get; set; }        
+        
     }
 }

@@ -13,12 +13,12 @@ namespace StarWars.Lib.Tools
     {
         public static bool ValidInput => (Regex.IsMatch(Globals.MGLT, @"^\d+$") && long.TryParse(Globals.MGLT, out long n));
 
-        public static async Task<List<Starship>> Get(int distance = 1000)
+        public static async Task<IEnumerable<Starship>> Get(int distance = 1000)
         {
             return GetStarshipAsync(ResultCallBack, distance).Result;
         }
 
-        private static async Task<List<Starship>> GetStarshipAsync(Action<StarshipWrapper> callBack = null, int valor=0)
+        private static async Task<IEnumerable<Starship>> GetStarshipAsync(Action<StarshipWrapper> callBack = null, int valor = 0)
         {
             List<Starship> starships = new List<Starship>();
             try
@@ -50,7 +50,7 @@ namespace StarWars.Lib.Tools
 
                                     foreach (Starship starship in starships)
                                     {
-                                        starship.resupplyFrequency = CalculateResupplyFrequency(starship);
+                                        starship.ResupplyFrequency = CalculateResupplyFrequency(starship);
                                     }
 
                                     // Run the callback method, passing the current result from the API.
@@ -82,7 +82,7 @@ namespace StarWars.Lib.Tools
         {
             if (starshipSearchResult != null && starshipSearchResult.Count > 0)
             {
-                int maxLengthStarshipName = starshipSearchResult.Starships.Aggregate((max, cur) => max.name.Length > cur.name.Length ? max : cur).name.Length;
+                int maxLengthStarshipName = starshipSearchResult.Starships.Aggregate((max, cur) => max.Name.Length > cur.Name.Length ? max : cur).Name.Length;
                 int maxLengthStarshipRange = starshipSearchResult.Starships.Aggregate((max, cur) => max.MGLT.Length > cur.MGLT.Length ? max : cur).MGLT.Length;
                 maxLengthStarshipRange = maxLengthStarshipRange > "unknown".Length ? maxLengthStarshipRange : "unknown".Length;
                 int maxLengthStarshipResupplies = Globals.MGLT.Length > "unknown".Length ? Globals.MGLT.Length : "unknown".Length;
@@ -90,7 +90,7 @@ namespace StarWars.Lib.Tools
 
                 foreach (var starship in starshipSearchResult.Starships)
                 {
-                    Console.WriteLine($"{starship.name.PadRight(maxLengthStarshipName)} \t\tMGLT - {starship.MGLT.PadLeft(maxLengthStarshipRange)} \t\tNo. of Resupplies - { starship.resupplyFrequency.PadLeft(maxLengthStarshipResupplies) }");
+                    Console.WriteLine($"{starship.Name.PadRight(maxLengthStarshipName)} \t\tMGLT - {starship.MGLT.PadLeft(maxLengthStarshipRange)} \t\tNo. of Resupplies - { starship.ResupplyFrequency.PadLeft(maxLengthStarshipResupplies) }");
                 }
             }
         }
@@ -106,7 +106,7 @@ namespace StarWars.Lib.Tools
             DateTime JourneyStart = DateTime.Now;
             DateTime JourneyEnd = DateTime.Now;
 
-            string[] tokenisedProvisionsOfConsumables = starship.consumables.Split(' ');
+            string[] tokenisedProvisionsOfConsumables = starship.Consumables.Split(' ');
 
             switch (tokenisedProvisionsOfConsumables[1].ToLower())
             {

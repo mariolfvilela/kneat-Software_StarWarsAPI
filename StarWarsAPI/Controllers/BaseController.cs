@@ -41,7 +41,8 @@ namespace StarWars.API.Controllers
         {
             try
             {
-                return new OkObjectResult(await app.GetByIdAsync(id));
+                //return new OkObjectResult(await app.GetByIdAsync(id));
+                return new OkObjectResult(StatusCode(200));
             }
             catch (Exception ex)
             {
@@ -59,6 +60,7 @@ namespace StarWars.API.Controllers
             try
             {
                 return new OkObjectResult(await app.AddAsync(dado));
+                //return new OkObjectResult(StatusCode(200));
             }
             catch (Exception ex)
             {
@@ -73,7 +75,8 @@ namespace StarWars.API.Controllers
         {
             try
             {
-                return new OkObjectResult(await app.UpdateAsync(dado));
+                //return new OkObjectResult(await app.UpdateAsync(dado));
+                return new OkObjectResult(StatusCode(200));
             }
             catch (Exception ex)
             {
@@ -89,7 +92,8 @@ namespace StarWars.API.Controllers
         {
             try
             {
-                return new OkObjectResult(await app.RemoveByIdAsync(id));
+                //return new OkObjectResult(await app.RemoveByIdAsync(id));
+                return new OkObjectResult(StatusCode(200));
             }
             catch (Exception ex)
             {
