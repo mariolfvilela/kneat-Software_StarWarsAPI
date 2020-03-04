@@ -13,9 +13,9 @@ namespace StarWars.Lib.Tools
     {
         public static bool ValidInput => (Regex.IsMatch(Globals.MGLT, @"^\d+$") && long.TryParse(Globals.MGLT, out long n));
 
-        public static async Task<List<Starship>> Get(int valor = 1000)
+        public static async Task<List<Starship>> Get(int distance = 1000)
         {
-            return GetStarshipAsync(ResultCallBack, valor).Result;
+            return GetStarshipAsync(ResultCallBack, distance).Result;
         }
 
         private static async Task<List<Starship>> GetStarshipAsync(Action<StarshipWrapper> callBack = null, int valor=0)

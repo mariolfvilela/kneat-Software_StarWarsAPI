@@ -29,12 +29,12 @@ namespace StarWars.API.Controllers
         // [Authorize("Bearer")]
         [AllowAnonymous]
         [HttpGet]
-        [Route("stops")]
-        public ActionResult<StarshipViewModel> Get()
+        [Route("Distance/{distance:int}")]
+        public ActionResult<StarshipViewModel> Get(int distance)
         {
             try
             {
-                var dado = app.SelecionarAtivosAsync();
+                var dado = app.SelecionarAtivosAsync(distance);
 
                 return StatusCode(200,
                      dado
@@ -58,23 +58,23 @@ namespace StarWars.API.Controllers
                     });
             }
         }
-        [AllowAnonymous]
-        [HttpGet]
-        [Route("Test2")]
-        public async Task<IActionResult> Teste(string id)
-        {
+        //[AllowAnonymous]
+        //[HttpGet]
+        //[Route("Test2")]
+        //public async Task<IActionResult> Teste(string id)
+        //{
 
-            return StatusCode(200,
-                    new StarshipViewModel()
-                    { });
-        }
+        //    return StatusCode(200,
+        //            new StarshipViewModel()
+        //            { });
+        //}
 
-        [AllowAnonymous]
-        [HttpGet]
-        [Route("Test")]
-        public ActionResult Test()
-        {
-            return StatusCode(200);
-        }
+        //[AllowAnonymous]
+        //[HttpGet]
+        //[Route("Test")]
+        //public ActionResult Test()
+        //{
+        //    return StatusCode(200);
+        //}
     }
 }
