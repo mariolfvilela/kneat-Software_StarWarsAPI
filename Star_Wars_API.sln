@@ -1,17 +1,17 @@
 
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "05 - Test", "05 - Test", "{C46FEB78-3AC4-4B7F-8F4D-AD3902F58391}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "07 - Test", "07 - Test", "{C46FEB78-3AC4-4B7F-8F4D-AD3902F58391}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "04 - Presentation", "04 - Presentation", "{DE1BB543-9E92-4FAB-AF57-482D532B1884}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "02 - Service", "02 - Service", "{DE1BB543-9E92-4FAB-AF57-482D532B1884}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StarWarsAPI", "StarWarsAPI\StarWarsAPI.csproj", "{E7D451FB-9E59-4FF2-8F50-071D51FFA0F0}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "01 - Domain", "01 - Domain", "{771E44BB-B070-435A-9AD9-9499610F7614}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "04 - Domain", "04 - Domain", "{771E44BB-B070-435A-9AD9-9499610F7614}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StarWars.Domain", "StarWars.Domain\StarWars.Domain.csproj", "{27DE6760-F1FC-4E3B-95CA-CA559841143E}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "02 - Infra", "02 - Infra", "{793FC0F0-BDF1-4D4D-80CA-3FD4B330EC94}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "05 - Infra", "05 - Infra", "{793FC0F0-BDF1-4D4D-80CA-3FD4B330EC94}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CrossCutting", "CrossCutting", "{C11389B1-0DB4-4FB0-B81F-F72F1A4D3404}"
 EndProject
@@ -28,6 +28,8 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "06 - Lib", "06 - Lib", "{9E89183F-90C4-4202-B415-22BCEA288743}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StarWars.Lib", "StarWars.Lib\StarWars.Lib.csproj", "{38F255E8-4D88-4967-B152-236E5EEE22FA}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "01 - Presentation", "01 - Presentation", "{6F6BB178-3536-49ED-B7D5-7E6D1BCF9516}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

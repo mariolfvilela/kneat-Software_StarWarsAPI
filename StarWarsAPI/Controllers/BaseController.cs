@@ -25,6 +25,7 @@ namespace StarWars.API.Controllers
         }
 
         // [Authorize("Bearer")]
+        [Obsolete("Deprecated")]
         [AllowAnonymous]
         [HttpGet]
         [Route("")]
@@ -34,6 +35,7 @@ namespace StarWars.API.Controllers
         }
 
         // [Authorize("Bearer")]
+        [Obsolete("Deprecated")]
         [AllowAnonymous]
         [HttpGet]
         [Route("{id:int}")]
@@ -53,6 +55,7 @@ namespace StarWars.API.Controllers
 
 
         // [Authorize("Bearer")]
+        [Obsolete("Deprecated")]
         [AllowAnonymous]
         [HttpPost]
         public async Task<ActionResult<EntityViewModel>> Add([FromBody] EntityViewModel dado)
@@ -69,6 +72,7 @@ namespace StarWars.API.Controllers
         }
 
         // [Authorize("Bearer")]
+        [Obsolete("Deprecated")]
         [AllowAnonymous]
         [HttpPut]
         public async Task<ActionResult<EntityViewModel>> Update([FromBody] EntityViewModel dado)
@@ -85,6 +89,7 @@ namespace StarWars.API.Controllers
         }
 
         // [Authorize("Bearer")]
+        [Obsolete("Deprecated")]
         [AllowAnonymous]
         [HttpDelete]
         [Route("{id:int}")]

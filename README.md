@@ -42,3 +42,36 @@ dotnet run
 
 Navigate to `https://localhost:5001/swagger` to check the API documentation.
 Using service `/api/Starship/Distance/{distance}`to calculate the distance
+
+---
+
+### Solution implemented :thumbsup:
+
+**Software modeling approach was developed the challenge "DDD Architecture", Domain Driven Design (DDD).** Reference [Eric Ferreira](https://medium.com/@ericandrade_24404/parte-01-criando-arquitetura-em-camadas-com-ddd-injeção-de-dep-ef-60b851c88461).
+
+> DDD is a software modeling approach that follows a set of practices to facilitate the implementation of complex business rules / processes that we treat as a domain. - Eduardo Pires
+
+- 02 - Services: receives “Application” reference.
+- 03 - Application: receives "Domain" reference.
+- 04 - Domain: Although it is the layer that most supports the other layers, it is the only one that receives no reference from anyone, so it depends on nothing! However, as the image shows, it communicates “indirectly” with the Data (Infrastructure) layer, and this is only possible thanks to interfaces.
+- 05 - Infrastructure: Last but not least, we have this layer that (as previously mentioned) has “sublayers” Data and CrossCutting, where they receive domain reference.
+  Data: is intended to persist data or any other external communication.
+  CrossCurring (Ioc): This is where all the interfaces and classes in the project are registered, so that it is responsible for instantiating the dependency tree of the whole architecture.
+
+_A note on architecture:
+As we can see, all layers are sequentially numbered, and this is very important, as this is exactly how the architecture flow works, from the graphical interface to the persistence of information in the database._
+
+**Swagger** Reference [Rebai Hamida](https://medium.com/@didourebai/add-swagger-to-asp-net-core-3-0-web-api-874cb265854c).
+
+> Swagger is a simple yet powerful representation of your RESTful API. With the largest ecosystem of API tooling on the planet, thousands of developers are supporting Swagger in almost every modern programming language and deployment environment. With a Swagger-enabled API, you get interactive documentation, client SDK generation and discoverability. -Rebai Hamida
+
+**Other features add to the project are:**
+
+- dependency injection
+- EntityFramework
+- MySql database (_unfortunately could not create a cache, but my skills are recorded_)
+- Validation with data annotations
+
+---
+
+###### Note: Run StarWarsAPI as the main project.
