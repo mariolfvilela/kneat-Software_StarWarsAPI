@@ -19,6 +19,9 @@ namespace StarWars.Domain.Entities
         public string Cargo_capacity { get; set; }
         public string Consumables { get; set; }
         public string Hyperdrive_rating { get; set; }
+        /// <summary>
+        /// The Maximum number of Megalights this starship can travel in a standard hour.
+        /// </summary>
         public string MGLT { get; set; }
         public string Starship_class { get; set; }
         public IList<string> Pilots { get; set; }

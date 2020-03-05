@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
+using StarWars.Domain.Entities;
 
 namespace StarWars.Application.ViewModels
 {
@@ -23,7 +24,11 @@ namespace StarWars.Application.ViewModels
         public string Passengers { get; set; }
         public string Cargo_capacity { get; set; }
         public string Consumables { get; set; }
+
         public string Hyperdrive_rating { get; set; }
+        /// <summary>
+        /// The Maximum number of Megalights this starship can travel in a standard hour.
+        /// </summary>
         public string MGLT { get; set; }
         public string Starship_class { get; set; }
         public IList<string> Pilots { get; set; }
@@ -31,7 +36,7 @@ namespace StarWars.Application.ViewModels
         public DateTime Created { get; set; }
         public DateTime Edited { get; set; }
         public string Url { get; set; }
-        public string ResupplyFrequency { get; set; }        
-        
+        public string ResupplyFrequency { get; set; }
+        public string ToStop { get; set; }
     }
 }

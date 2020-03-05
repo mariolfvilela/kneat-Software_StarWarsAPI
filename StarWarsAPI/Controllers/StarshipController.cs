@@ -29,8 +29,8 @@ namespace StarWars.API.Controllers
         // [Authorize("Bearer")]
         [AllowAnonymous]
         [HttpGet]
-        [Route("Distance/{MGLT:int}")]
-        public async Task<ActionResult<StarshipCoverDistanceViewModel>> GetAsync(int MGLT)
+        [Route("Distance/{MGLT:long}")]
+        public async Task<ActionResult<StarshipCoverDistanceViewModel>> GetAsync(long MGLT)
         {
             try
             {
@@ -39,9 +39,9 @@ namespace StarWars.API.Controllers
                 return StatusCode(200,
                      dado
                      .Distinct()
-                     .OrderBy(c=>c.MGLT)
+                     .OrderBy(c=>c.ToStop)
                      .ThenBy(c => c.Name)
-                     .Select(c=>new { a = c.Name+" needs to stop: "+c.MGLT})
+                     .Select(c=>new { a = c.Name+" needs to stop: "+c.ToStop})
                      .Select(c=>c.a).ToList()
                     );
             }
