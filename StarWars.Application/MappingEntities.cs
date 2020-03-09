@@ -10,7 +10,10 @@ namespace StarWars.Application
         public MappingEntities()
         {
             CreateMap<Starship, StarshipViewModel>();
+            CreateMap<User, UserViewModel>();
+
             CreateMap<StarshipViewModel, Starship>();
+            CreateMap<UserViewModel, User>();
 
         }
     }

@@ -30,6 +30,7 @@ Requirements
 - [AutoMapper](https://automapper.org/) (for mapping resources and models);
 - [Swashbuckle](https://github.com/domaindrivendev/Swashbuckle) (API documentation).
 - [Entity Framework In-Memory Provider](https://docs.microsoft.com/en-us/ef/core/miscellaneous/testing/in-memory) (for testing purposes);
+- [Microsoft.AspNetCore.Authentication.Jwt](https://docs.microsoft.com/en-us/dotnet/api/microsoft.aspnetcore.authentication.jwtbearer?view=aspnetcore-3.0)(Bearer and JWT Authentication and Authorization)
 
 ## How to Test
 
@@ -65,12 +66,20 @@ As we can see, all layers are sequentially numbered, and this is very important,
 
 > Swagger is a simple yet powerful representation of your RESTful API. With the largest ecosystem of API tooling on the planet, thousands of developers are supporting Swagger in almost every modern programming language and deployment environment. With a Swagger-enabled API, you get interactive documentation, client SDK generation and discoverability. -Rebai Hamida
 
+**Authentication and Authorization with Bearer and JWT** Reference [Balta](https://balta.io/blog/aspnetcore-3-autenticacao-autorizacao-bearer-jwt).
+
+> JWT is an industry standard (RFC-7519) that defines how to transmit and store JSON objects compactly and securely between different applications. The data contained therein can be validated at any time because the token is digitally signed. -Wellington Nascimento
+
+_For testing authentications, the valid values for user are {Username = "batman", Password = "batman"} or {Username = "robin", Password = "robin"}_
+
 **Other features add to the project are:**
 
 - dependency injection
 - EntityFramework
 - MySql database (_unfortunately could not create a cache, but my skills are recorded_)
 - Validation with data annotations
+- Microsoft AspNetCore Authentication Jwt
+- Auto Mapper
 
 ---
 

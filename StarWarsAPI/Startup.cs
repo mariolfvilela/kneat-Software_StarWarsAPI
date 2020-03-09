@@ -14,6 +14,9 @@ using StarWars.Application;
 using StarWars.CrossCutting.IoC;
 using StarWars.Infra.Data.Context;
 using Microsoft.AspNetCore.ResponseCompression;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.IdentityModel.Tokens;
+using System.Text;
 
 namespace StarWarsAPI
 {
@@ -70,6 +73,26 @@ namespace StarWarsAPI
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "Kneat", Version = "v1" });
             });
 
+            // https://balta.io/blog/aspnetcore-3-autenticacao-autorizacao-bearer-jwt
+            //Autenticação e Autorização com Bearer e JWT
+            var key = Encoding.ASCII.GetBytes(Configuration.GetConnectionString("Secret_Chave_Privada_Token"));
+            services.AddAuthentication(x =>
+            {
+                x.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+                x.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+            })
+            .AddJwtBearer(x =>
+            {
+                x.RequireHttpsMetadata = false;
+                x.SaveToken = true;
+                x.TokenValidationParameters = new TokenValidationParameters
+                {
+                    ValidateIssuerSigningKey = true,
+                    IssuerSigningKey = new SymmetricSecurityKey(key),
+                    ValidateIssuer = false,
+                    ValidateAudience = false
+                };
+            });
 
             // Adding configuration independence injection to get the values set in the control
             services.AddSingleton<IConfiguration>(Configuration);
