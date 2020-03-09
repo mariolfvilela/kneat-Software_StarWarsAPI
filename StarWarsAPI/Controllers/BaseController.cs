@@ -17,34 +17,36 @@ namespace StarWars.API.Controllers
         where Entity : EntityBase
         where EntityViewModel : ViewModelBase
     {
-        readonly protected IAppServicoBase<Entity, EntityViewModel> app;
+        //readonly protected IAppServicoBase<Entity, EntityViewModel> app;
 
-        protected BaseController(IAppServicoBase<Entity, EntityViewModel> app)
-        {
-            this.app = app;
-        }
+        //protected BaseController(IAppServicoBase<Entity, EntityViewModel> app)
+        //{
+        //    this.app = app;
+        //}
 
         // [Authorize("Bearer")]
-        [Obsolete("Deprecated")]
+        //[Obsolete("Deprecated")]
+        // [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         [AllowAnonymous]
         [HttpGet]
         [Route("")]
-        public async virtual Task<IActionResult> ListAsync()
+        public async virtual Task<ActionResult<List<EntityViewModel>>> ListAsync([FromServices] IAppServicoBase<Entity, EntityViewModel> app)
         {
             return new OkObjectResult(await app.ListAsync());
         }
 
         // [Authorize("Bearer")]
-        [Obsolete("Deprecated")]
+        //[Obsolete("Deprecated")]
         [AllowAnonymous]
         [HttpGet]
         [Route("{id:int}")]
-        public async Task<ActionResult<EntityViewModel>> GetById(int id)
+        public async Task<ActionResult<EntityViewModel>> GetById(
+            [FromServices] IAppServicoBase<Entity, EntityViewModel> app,
+            int id)
         {
             try
             {
-                //return new OkObjectResult(await app.GetByIdAsync(id));
-                return new OkObjectResult(StatusCode(200));
+                return new OkObjectResult(await app.GetByIdAsync(id));
             }
             catch (Exception ex)
             {
@@ -55,15 +57,19 @@ namespace StarWars.API.Controllers
 
 
         // [Authorize("Bearer")]
-        [Obsolete("Deprecated")]
+        //[Obsolete("Deprecated")]
         [AllowAnonymous]
         [HttpPost]
-        public async Task<ActionResult<EntityViewModel>> Add([FromBody] EntityViewModel dado)
+        public async Task<ActionResult<EntityViewModel>> Post(
+            [FromServices] IAppServicoBase<Entity, EntityViewModel> app,
+            [FromBody] EntityViewModel dado)
         {
+            // Checks whether the data is valid
+            if (!ModelState.IsValid)
+                return BadRequest(ModelState);
             try
             {
                 return new OkObjectResult(await app.AddAsync(dado));
-                //return new OkObjectResult(StatusCode(200));
             }
             catch (Exception ex)
             {
@@ -72,15 +78,25 @@ namespace StarWars.API.Controllers
         }
 
         // [Authorize("Bearer")]
-        [Obsolete("Deprecated")]
+        //[Obsolete("Deprecated")]
         [AllowAnonymous]
         [HttpPut]
-        public async Task<ActionResult<EntityViewModel>> Update([FromBody] EntityViewModel dado)
+        [Route("{id:int}")]
+        public async Task<ActionResult<EntityViewModel>> Put(
+            [FromServices] IAppServicoBase<Entity, EntityViewModel> app,
+            int id,
+            [FromBody] EntityViewModel dado)
         {
+            // Checks whether the given ID is the same as the model
+            if (id != dado.Id)
+                return NotFound(new { message = "Id not found" });
+
+            // Checks whether the data is valid
+            if (!ModelState.IsValid)
+                return BadRequest(ModelState);
             try
             {
-                //return new OkObjectResult(await app.UpdateAsync(dado));
-                return new OkObjectResult(StatusCode(200));
+                return new OkObjectResult(await app.UpdateAsync(dado));
             }
             catch (Exception ex)
             {
@@ -89,16 +105,21 @@ namespace StarWars.API.Controllers
         }
 
         // [Authorize("Bearer")]
-        [Obsolete("Deprecated")]
+        //[Obsolete("Deprecated")]
         [AllowAnonymous]
         [HttpDelete]
         [Route("{id:int}")]
-        public async Task<IActionResult> RemoveById(int id)
+        public async Task<IActionResult> RemoveById(
+            [FromServices] IAppServicoBase<Entity, EntityViewModel> app,
+            int id)
         {
+            var entiry = app.GetByIdAsync(id).Result;
+            if (entiry == null)
+                return NotFound(new { message = "Id not found" });
+
             try
             {
-                //return new OkObjectResult(await app.RemoveByIdAsync(id));
-                return new OkObjectResult(StatusCode(200));
+                return new OkObjectResult(await app.RemoveByIdAsync(id));
             }
             catch (Exception ex)
             {

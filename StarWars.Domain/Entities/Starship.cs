@@ -24,10 +24,8 @@ namespace StarWars.Domain.Entities
         /// </summary>
         public string MGLT { get; set; }
         public string Starship_class { get; set; }
-        public IList<string> Pilots { get; set; }
-        public IList<string> Films { get; set; }
-        public DateTime Created { get; set; }
-        public DateTime Edited { get; set; }
+        public IList<Pilot> Pilots { get; set; }
+        public IList<Film> Films { get; set; }
         public string Url { get; set; }
         public string ResupplyFrequency { get; set; }
     }

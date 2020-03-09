@@ -46,10 +46,9 @@ namespace StarWars.Infra.Data.Repository
 
         public virtual int Add(TEntity entidade)
         {
-            //_context.InitTransacao();
             int id = DbSet.Add(entidade).Entity.Id;
-            _context.SaveChanges();
-            //_context.SendChanges();
+            // _context.SaveChangesAsync();
+            SaveChanges();
             return id;
         }
 
@@ -58,28 +57,25 @@ namespace StarWars.Infra.Data.Repository
             var entidade = GetById(id);
             if (entidade != null)
             {
-               // _context.InitTransacao();
                 DbSet.Remove(entidade);
-                _context.SaveChanges();
-                // _context.SendChanges();
+                //_context.SaveChangesAsync();
+                SaveChanges();
             }
         }
 
         public virtual void Remove(TEntity entidade)
         {
-            //_context.InitTransacao();
             DbSet.Remove(entidade);
-            _context.SaveChanges();
-            //_context.SendChanges();
+            //_context.SaveChangesAsync();
+            SaveChanges();
         }
 
         public virtual TEntity Update(TEntity entidade)
         {
-            //_context.InitTransacao();
             DbSet.Attach(entidade);
             _context.Entry(entidade).State = EntityState.Modified;
-            _context.SaveChanges();
-            //_context.SendChanges();
+            //_context.SaveChangesAsync();
+            SaveChanges();
             return entidade;
         }
 
@@ -96,7 +92,7 @@ namespace StarWars.Infra.Data.Repository
 
         public virtual async Task<IEnumerable<TEntity>> ListAsync()
         {
-            return await DbSet.ToListAsync();
+            return await DbSet.AsNoTracking().ToListAsync();
         }
     }
 }

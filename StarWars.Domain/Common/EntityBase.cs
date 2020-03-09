@@ -1,4 +1,6 @@
 ﻿using System;
+using System.ComponentModel.DataAnnotations;
+
 namespace StarWars.Domain.Common
 {
     /// <summary>
@@ -9,6 +11,7 @@ namespace StarWars.Domain.Common
         /// <summary>
         /// Identificação (Identity)
         /// </summary>
+        [Key]
         public int Id { get; set; }
 
         /// <summary>
