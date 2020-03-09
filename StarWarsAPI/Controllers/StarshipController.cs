@@ -20,17 +20,14 @@ namespace StarWars.API.Controllers
     public class StarshipController : BaseController<Starship, StarshipViewModel>
     {
 
-        public StarshipController(IStarshipAppService app)
-            : base(app)
-        {
-        }
-
 
         // [Authorize("Bearer")]
         [AllowAnonymous]
         [HttpGet]
         [Route("Distance/{MGLT:long}")]
-        public async Task<ActionResult<StarshipCoverDistanceViewModel>> GetAsync(long MGLT)
+        public async Task<ActionResult<StarshipCoverDistanceViewModel>> GetAsync(
+            [FromServices] IAppServicoBase<Starship, StarshipViewModel> app,
+            long MGLT)
         {
             try
             {

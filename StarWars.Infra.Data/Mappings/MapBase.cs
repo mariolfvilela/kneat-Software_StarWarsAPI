@@ -1,5 +1,4 @@
-﻿using System;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
 using StarWars.Domain.Common;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 

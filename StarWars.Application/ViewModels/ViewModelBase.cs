@@ -9,17 +9,17 @@ namespace StarWars.Application.ViewModels
         /// <summary>
         /// Identificação (Identity)
         /// </summary>
-        //public int Id { get; set; }
+        public int Id { get; set; }
 
         /// <summary>
         /// Data de criação do registro.
         /// </summary>
-        //public DateTime Created { get; set; }
+        public DateTime Created { get; set; }
 
         /// <summary>
         /// Data de alteração do registro.
         /// </summary>
-        //public DateTime? LastModified { get; set; }
+        public DateTime? LastModified { get; set; }
 
         public string Mensagem { get; set; }
         public string Exception { get; set; }
