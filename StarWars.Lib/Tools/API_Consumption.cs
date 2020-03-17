@@ -41,7 +41,10 @@ namespace StarWars.Lib.Tools
                             if (response.IsSuccessStatusCode)
                             {
                                 string asyncResponse = await response.Content.ReadAsStringAsync();
-                                var result = JsonConvert.DeserializeObject<StarshipWrapper>(asyncResponse);
+                                try
+                                {
+                                 var result = JsonConvert.DeserializeObject<StarshipWrapper>(asyncResponse);
+                                
                                 if (result != null)
                                 {
                                     // Build the entire list to return later after the loop.
@@ -58,6 +61,11 @@ namespace StarWars.Lib.Tools
 
                                     // Get the URL for the next page, where it exists.
                                     nextUrl = result.Next ?? string.Empty;
+                                }
+                                }
+                                catch (Exception ex)
+                                {
+                                    throw new Exception("Erro , Error returning to consulmir API http://swapi.co/api/starships/. \n" + ex.Message);
                                 }
                             }
                             else

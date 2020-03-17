@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Runtime.Serialization;
 using StarWars.Domain.Common;
 
 namespace StarWars.Domain.Entities
@@ -24,8 +25,9 @@ namespace StarWars.Domain.Entities
         /// </summary>
         public string MGLT { get; set; }
         public string Starship_class { get; set; }
-        public IList<Pilot> Pilots { get; set; }
-        public IList<Film> Films { get; set; }
+        //[DataMember(Name = "pilots")]
+        //public IList<Pilot>? Pilots { get; set; }
+        //public IList<Film>? Films { get; set; }
         public string Url { get; set; }
         public string ResupplyFrequency { get; set; }
     }

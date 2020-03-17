@@ -31,8 +31,8 @@ namespace StarWars.Application.ViewModels
         /// </summary>
         public string MGLT { get; set; }
         public string Starship_class { get; set; }
-        public IList<Pilot> Pilots { get; set; }
-        public IList<Film> Films { get; set; }
+        //public IList<string> Pilots { get; set; }
+        //public IList<Film> Films { get; set; }
         public string Url { get; set; }
         public string ResupplyFrequency { get; set; }
         public string ToStop { get; set; }
