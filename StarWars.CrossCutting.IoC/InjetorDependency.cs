@@ -16,19 +16,19 @@ namespace StarWars.CrossCutting.IoC
         {
 
             //Aplicação
-            svcCollection.AddTransient(typeof(IAppServicoBase<,>), typeof(BaseAppService<,>));
-            svcCollection.AddTransient<IStarshipAppService, StarshipAppService>();
-            svcCollection.AddTransient<IUserAppService, UserAppService>();
+            svcCollection.AddScoped(typeof(IAppServicoBase<,>), typeof(BaseAppService<,>));
+            svcCollection.AddScoped<IStarshipAppService, StarshipAppService>();
+            svcCollection.AddScoped<IUserAppService, UserAppService>();
 
             //Domínio
-            svcCollection.AddTransient(typeof(IServiceBase<>), typeof(ServiceBase<>));
-            svcCollection.AddTransient<IStarshipService, StarshipServico>();
-            svcCollection.AddTransient<IUserService, UserService>();
+            svcCollection.AddScoped(typeof(IServiceBase<>), typeof(ServiceBase<>));
+            svcCollection.AddScoped<IStarshipService, StarshipServico>();
+            svcCollection.AddScoped<IUserService, UserService>();
 
             //Repositorio
-            svcCollection.AddScoped(typeof(IRepositoryBase<>), typeof(RepositoryBase<>));
-            svcCollection.AddScoped<IStarshipRepository, StarshipRepository>();
-            svcCollection.AddScoped<IUserRepository, UserRepository>();
+            svcCollection.AddTransient(typeof(IRepositoryBase<>), typeof(RepositoryBase<>));
+            svcCollection.AddTransient<IStarshipRepository, StarshipRepository>();
+            svcCollection.AddTransient<IUserRepository, UserRepository>();
 
             // https://balta.io/blog/aspnet-core-dependency-injection
             // AddScoped
