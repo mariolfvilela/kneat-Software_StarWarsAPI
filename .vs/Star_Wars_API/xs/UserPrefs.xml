@@ -1,0 +1,32 @@
+﻿<Properties GitUserInfo="UsingMD" StartupConfiguration="{E7D451FB-9E59-4FF2-8F50-071D51FFA0F0}|Default">
+  <MonoDevelop.Ide.ItemProperties.02_220-_220Service.StarWarsAPI PreferredExecutionTarget="/Applications/Safari.app" />
+  <MonoDevelop.Ide.Workbench>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="Star_Wars_API" expanded="True">
+            <Node name="02 - Service" expanded="True">
+              <Node name="StarWarsAPI" expanded="True">
+                <Node name="Properties" expanded="True">
+                  <Node name="PublishProfiles" expanded="True">
+                    <Node name="mariostarwarsapi - Web Deploy.pubxml" selected="True" />
+                  </Node>
+                </Node>
+              </Node>
+            </Node>
+            <Node name="05 - Infra" expanded="True" />
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore>
+      <Breakpoint file="/Users/mario/Projects/kneat-Software_StarWarsAPI/StarWarsAPI/Controllers/BaseController.cs" relfile="StarWarsAPI/Controllers/BaseController.cs" line="116" column="1" />
+      <Breakpoint file="/Users/mario/Projects/kneat-Software_StarWarsAPI/StarWars.Lib/Tools/API_Consumption.cs" relfile="StarWars.Lib/Tools/API_Consumption.cs" line="68" column="1" />
+    </BreakpointStore>
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+</Properties>

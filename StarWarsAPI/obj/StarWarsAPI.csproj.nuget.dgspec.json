@@ -1,0 +1,434 @@
+{
+  "format": 1,
+  "restore": {
+    "/Users/mario/Projects/kneat-Software_StarWarsAPI/StarWarsAPI/StarWarsAPI.csproj": {}
+  },
+  "projects": {
+    "/Users/mario/Projects/kneat-Software_StarWarsAPI/StarWars.Application/StarWars.Application.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/mario/Projects/kneat-Software_StarWarsAPI/StarWars.Application/StarWars.Application.csproj",
+        "projectName": "StarWars.Application",
+        "projectPath": "/Users/mario/Projects/kneat-Software_StarWarsAPI/StarWars.Application/StarWars.Application.csproj",
+        "packagesPath": "/Users/mario/.nuget/packages/",
+        "outputPath": "/Users/mario/Projects/kneat-Software_StarWarsAPI/StarWars.Application/obj/",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "/usr/local/share/dotnet/sdk/NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "/Users/mario/.config/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.1"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp3.1": {
+            "projectReferences": {
+              "/Users/mario/Projects/kneat-Software_StarWarsAPI/StarWars.Domain/StarWars.Domain.csproj": {
+                "projectPath": "/Users/mario/Projects/kneat-Software_StarWarsAPI/StarWars.Domain/StarWars.Domain.csproj"
+              },
+              "/Users/mario/Projects/kneat-Software_StarWarsAPI/StarWars.Infra.Data/StarWars.Infra.Data.csproj": {
+                "projectPath": "/Users/mario/Projects/kneat-Software_StarWarsAPI/StarWars.Infra.Data/StarWars.Infra.Data.csproj"
+              },
+              "/Users/mario/Projects/kneat-Software_StarWarsAPI/StarWars.Lib/StarWars.Lib.csproj": {
+                "projectPath": "/Users/mario/Projects/kneat-Software_StarWarsAPI/StarWars.Lib/StarWars.Lib.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
+          "dependencies": {
+            "AutoMapper.Extensions.Microsoft.DependencyInjection": {
+              "target": "Package",
+              "version": "[7.0.0, )"
+            },
+            "DotNetCore.Validation": {
+              "target": "Package",
+              "version": "[10.28.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/3.1.401/RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/Users/mario/Projects/kneat-Software_StarWarsAPI/StarWars.CrossCutting.IoC/StarWars.CrossCutting.IoC.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/mario/Projects/kneat-Software_StarWarsAPI/StarWars.CrossCutting.IoC/StarWars.CrossCutting.IoC.csproj",
+        "projectName": "StarWars.CrossCutting.IoC",
+        "projectPath": "/Users/mario/Projects/kneat-Software_StarWarsAPI/StarWars.CrossCutting.IoC/StarWars.CrossCutting.IoC.csproj",
+        "packagesPath": "/Users/mario/.nuget/packages/",
+        "outputPath": "/Users/mario/Projects/kneat-Software_StarWarsAPI/StarWars.CrossCutting.IoC/obj/",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "/usr/local/share/dotnet/sdk/NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "/Users/mario/.config/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.1"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp3.1": {
+            "projectReferences": {
+              "/Users/mario/Projects/kneat-Software_StarWarsAPI/StarWars.Application/StarWars.Application.csproj": {
+                "projectPath": "/Users/mario/Projects/kneat-Software_StarWarsAPI/StarWars.Application/StarWars.Application.csproj"
+              },
+              "/Users/mario/Projects/kneat-Software_StarWarsAPI/StarWars.Domain/StarWars.Domain.csproj": {
+                "projectPath": "/Users/mario/Projects/kneat-Software_StarWarsAPI/StarWars.Domain/StarWars.Domain.csproj"
+              },
+              "/Users/mario/Projects/kneat-Software_StarWarsAPI/StarWars.Infra.Data/StarWars.Infra.Data.csproj": {
+                "projectPath": "/Users/mario/Projects/kneat-Software_StarWarsAPI/StarWars.Infra.Data/StarWars.Infra.Data.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
+          "dependencies": {
+            "Microsoft.Extensions.DependencyInjection": {
+              "target": "Package",
+              "version": "[3.1.2, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/3.1.401/RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/Users/mario/Projects/kneat-Software_StarWarsAPI/StarWars.Domain/StarWars.Domain.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/mario/Projects/kneat-Software_StarWarsAPI/StarWars.Domain/StarWars.Domain.csproj",
+        "projectName": "StarWars.Domain",
+        "projectPath": "/Users/mario/Projects/kneat-Software_StarWarsAPI/StarWars.Domain/StarWars.Domain.csproj",
+        "packagesPath": "/Users/mario/.nuget/packages/",
+        "outputPath": "/Users/mario/Projects/kneat-Software_StarWarsAPI/StarWars.Domain/obj/",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "/usr/local/share/dotnet/sdk/NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "/Users/mario/.config/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.1"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp3.1": {
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/3.1.401/RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/Users/mario/Projects/kneat-Software_StarWarsAPI/StarWars.Infra.Data/StarWars.Infra.Data.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/mario/Projects/kneat-Software_StarWarsAPI/StarWars.Infra.Data/StarWars.Infra.Data.csproj",
+        "projectName": "StarWars.Infra.Data",
+        "projectPath": "/Users/mario/Projects/kneat-Software_StarWarsAPI/StarWars.Infra.Data/StarWars.Infra.Data.csproj",
+        "packagesPath": "/Users/mario/.nuget/packages/",
+        "outputPath": "/Users/mario/Projects/kneat-Software_StarWarsAPI/StarWars.Infra.Data/obj/",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "/usr/local/share/dotnet/sdk/NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "/Users/mario/.config/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.1"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp3.1": {
+            "projectReferences": {
+              "/Users/mario/Projects/kneat-Software_StarWarsAPI/StarWars.Domain/StarWars.Domain.csproj": {
+                "projectPath": "/Users/mario/Projects/kneat-Software_StarWarsAPI/StarWars.Domain/StarWars.Domain.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[3.1.2, )"
+            },
+            "Microsoft.EntityFrameworkCore.InMemory": {
+              "target": "Package",
+              "version": "[3.1.2, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[3.1.2, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[3.1.2, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/3.1.401/RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/Users/mario/Projects/kneat-Software_StarWarsAPI/StarWars.Lib/StarWars.Lib.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/mario/Projects/kneat-Software_StarWarsAPI/StarWars.Lib/StarWars.Lib.csproj",
+        "projectName": "StarWars.Lib",
+        "projectPath": "/Users/mario/Projects/kneat-Software_StarWarsAPI/StarWars.Lib/StarWars.Lib.csproj",
+        "packagesPath": "/Users/mario/.nuget/packages/",
+        "outputPath": "/Users/mario/Projects/kneat-Software_StarWarsAPI/StarWars.Lib/obj/",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "/usr/local/share/dotnet/sdk/NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "/Users/mario/.config/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.1"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp3.1": {
+            "projectReferences": {
+              "/Users/mario/Projects/kneat-Software_StarWarsAPI/StarWars.Domain/StarWars.Domain.csproj": {
+                "projectPath": "/Users/mario/Projects/kneat-Software_StarWarsAPI/StarWars.Domain/StarWars.Domain.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
+          "dependencies": {
+            "Microsoft.IdentityModel.Tokens": {
+              "target": "Package",
+              "version": "[5.6.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/3.1.401/RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/Users/mario/Projects/kneat-Software_StarWarsAPI/StarWarsAPI/StarWarsAPI.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/mario/Projects/kneat-Software_StarWarsAPI/StarWarsAPI/StarWarsAPI.csproj",
+        "projectName": "StarWarsAPI",
+        "projectPath": "/Users/mario/Projects/kneat-Software_StarWarsAPI/StarWarsAPI/StarWarsAPI.csproj",
+        "packagesPath": "/Users/mario/.nuget/packages/",
+        "outputPath": "/Users/mario/Projects/kneat-Software_StarWarsAPI/StarWarsAPI/obj/",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "/usr/local/share/dotnet/sdk/NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "/Users/mario/.config/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.1"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp3.1": {
+            "projectReferences": {
+              "/Users/mario/Projects/kneat-Software_StarWarsAPI/StarWars.Application/StarWars.Application.csproj": {
+                "projectPath": "/Users/mario/Projects/kneat-Software_StarWarsAPI/StarWars.Application/StarWars.Application.csproj"
+              },
+              "/Users/mario/Projects/kneat-Software_StarWarsAPI/StarWars.CrossCutting.IoC/StarWars.CrossCutting.IoC.csproj": {
+                "projectPath": "/Users/mario/Projects/kneat-Software_StarWarsAPI/StarWars.CrossCutting.IoC/StarWars.CrossCutting.IoC.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
+          "dependencies": {
+            "Microsoft.AspNetCore.Authentication": {
+              "target": "Package",
+              "version": "[2.2.0, )"
+            },
+            "Microsoft.AspNetCore.Authentication.JwtBearer": {
+              "target": "Package",
+              "version": "[3.1.2, )"
+            },
+            "Microsoft.EntityFrameworkCore.InMemory": {
+              "target": "Package",
+              "version": "[3.1.2, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[3.1.2, )"
+            },
+            "Microsoft.Extensions.DependencyInjection": {
+              "target": "Package",
+              "version": "[3.1.2, )"
+            },
+            "Swashbuckle.AspNetCore": {
+              "target": "Package",
+              "version": "[5.0.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/3.1.401/RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

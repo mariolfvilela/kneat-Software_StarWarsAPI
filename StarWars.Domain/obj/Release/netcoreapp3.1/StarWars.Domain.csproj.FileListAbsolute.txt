@@ -1,0 +1,11 @@
+/Users/mario/Projects/kneat-Software_StarWarsAPI/StarWars.Domain/bin/Release/netcoreapp3.1/StarWars.Domain.deps.json
+/Users/mario/Projects/kneat-Software_StarWarsAPI/StarWars.Domain/bin/Release/netcoreapp3.1/StarWars.Domain.runtimeconfig.json
+/Users/mario/Projects/kneat-Software_StarWarsAPI/StarWars.Domain/bin/Release/netcoreapp3.1/StarWars.Domain.runtimeconfig.dev.json
+/Users/mario/Projects/kneat-Software_StarWarsAPI/StarWars.Domain/bin/Release/netcoreapp3.1/StarWars.Domain.dll
+/Users/mario/Projects/kneat-Software_StarWarsAPI/StarWars.Domain/bin/Release/netcoreapp3.1/StarWars.Domain.pdb
+/Users/mario/Projects/kneat-Software_StarWarsAPI/StarWars.Domain/obj/Release/netcoreapp3.1/StarWars.Domain.AssemblyInfoInputs.cache
+/Users/mario/Projects/kneat-Software_StarWarsAPI/StarWars.Domain/obj/Release/netcoreapp3.1/StarWars.Domain.AssemblyInfo.cs
+/Users/mario/Projects/kneat-Software_StarWarsAPI/StarWars.Domain/obj/Release/netcoreapp3.1/StarWars.Domain.csproj.CoreCompileInputs.cache
+/Users/mario/Projects/kneat-Software_StarWarsAPI/StarWars.Domain/obj/Release/netcoreapp3.1/StarWars.Domain.dll
+/Users/mario/Projects/kneat-Software_StarWarsAPI/StarWars.Domain/obj/Release/netcoreapp3.1/StarWars.Domain.pdb
+/Users/mario/Projects/kneat-Software_StarWarsAPI/StarWars.Domain/obj/Release/netcoreapp3.1/StarWars.Domain.genruntimeconfig.cache
